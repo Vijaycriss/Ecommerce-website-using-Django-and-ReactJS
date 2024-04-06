@@ -13,7 +13,7 @@ class  CustomerModelTest(TestCase):
         cls.last_name = Customer.objects.create(last_name = 'Doe')
         cls.phone_no = Customer.objects.create(phone_no= 1234567890)
         cls.email = Customer.objects.create(email= "johndoe@gmail.com")
-        cls.password = Customer.objects.create(password = "myPassword")
+        cls.password = Customer.objects.create(password = "muPassword")
         return super().setUpTestData()
     
     def test_first_name_content(self):
