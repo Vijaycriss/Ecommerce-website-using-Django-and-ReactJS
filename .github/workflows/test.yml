@@ -32,7 +32,3 @@ jobs:
       
       - name: Test App Code
         run: python manage.py test store
-        
-
-notifications:
-  email = false
