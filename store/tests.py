@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-from .models.customers import Customer
+from store.models.customers import Customer
 
 # Create your tests here.
 #test
