@@ -1,18 +1,19 @@
 from django.test import TestCase, Client
-from .models import customers
+from .models.customers import Customer
 
 # Create your tests here.
 #test
 #1. test_customer_creation(self):
+#
 class  CustomerModelTest(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
         cls.client = Client()
-        cls.first_name = customers.objects.create(first_name='John')
-        cls.last_name = customers.objects.create(last_name = 'Doe')
-        cls.phone_no = customers.objects.create(phone_number="1234567890")
-        cls.email = customers.objects.create(email= "johndoe@gmail.com")
-        cls.password = customers.objects.create(password = "myPassword")
+        cls.first_name = Customer.objects.create(first_name='John')
+        cls.last_name = Customer.objects.create(last_name = 'Doe')
+        cls.phone_no = Customer.objects.create(phone_number="1234567890")
+        cls.email = Customer.objects.create(email= "johndoe@gmail.com")
+        cls.password = Customer.objects.create(password = "myPassword")
         return super().setUpTestData()
     
     def test_first_name_content(self):
@@ -25,9 +26,9 @@ class  CustomerModelTest(TestCase):
         """
         The phone number should contain only numbers and it's length should be equal to or greater than 10.
         """
-        valid_phone = customers(phone_number="1234567890")
-        invalid_phone = customers(phone_number="abcdefg")
-        too_short_phone = customers(phone_number="123")
+        valid_phone = Customer(phone_number="1234567890")
+        invalid_phone = Customer(phone_number="abcdefg")
+        too_short_phone = Customer(phone_number="123")
 
         self.assertTrue(valid_phone.is_phone_valid())
         self.assertFalse(invalid_phone.is_phone_valid())
