@@ -25,7 +25,12 @@ class Customer(models.Model):
     
     def is_phone_valid(self):
         try:
-            return  Customer.objects.get(phone_no=int(self.phone_no))
+            phone = Customer.objects.get(phone_no=self.phone_no)
+            return self.phone.isdigit() and  len(str(phone)) == 10
         except Customer.DoesNotExist:
-            return None  
+            return None 
+            
+    class Meta:
+        db_table = "customers"
+         
             
