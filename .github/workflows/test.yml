@@ -35,4 +35,4 @@ jobs:
           pip install -r ../requirements.txt
       
       - name: Test App Code
-        run: python manage.py tests.py store
+        run: python manage.py tests.py
