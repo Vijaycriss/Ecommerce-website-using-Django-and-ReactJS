@@ -25,7 +25,8 @@ class Customer(models.Model):
     
     def is_phone_valid(self):
         try:
-            return self.phone_no.isdigit() and len(self.phone_no) == 10
+            phone_no = str(self.phone_no)
+            return phone_no.isdigit() and len(phone_no) == 10
         except Customer.DoesNotExist:
             return None 
          
