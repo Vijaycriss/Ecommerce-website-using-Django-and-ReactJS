@@ -20,7 +20,17 @@ class  CustomerModelTest(TestCase):
         """
         The first name field must be filled with the content of John.
         """
-        self.assertEqual(f"{self.first_name}", 'John')
+        self.assertEqual(Customer.objects.get(id=self.first_name.id).first_name, 'John')
+        
+    #More test cases can be added for other fields as well.
+
+    def test_string_representation(self):
+        """
+        Making sure our string representation returns a string that represents the customer correctly.
+        """
+        customer = Customer.objects.get(id=self.first_name.id)
+        expected_value = f"{customer.first_name} {customer.last_name}({customer.phone_no})"
+        self.assertEqual(str(customer),expected_value)
         
     def test_phone_number_is_valid(self):
         """
