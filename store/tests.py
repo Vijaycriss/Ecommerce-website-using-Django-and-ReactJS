@@ -4,7 +4,7 @@ from store.models.customers import Customer
 # Create your tests here.
 #test
 #1. test_customer_creation(self):
-#
+##
 class  CustomerModelTest(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
