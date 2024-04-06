@@ -22,3 +22,10 @@ class Customer(models.Model):
             return True
 
         return False
+    
+    def is_phone_valid(self):
+        try:
+            return  Customer.objects.get(phone_no=int(self.phone_no))
+        except Customer.DoesNotExist:
+            return None  
+            

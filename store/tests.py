@@ -20,11 +20,11 @@ class  CustomerModelTest(TestCase):
         """
         The first name field must be filled with the content of John.
         """
-        self.assertEqual(f"{self.first_name}", "John")
+        self.assertEqual(f"{self.first_name}", 'John')
         
     def test_phone_number_is_valid(self):
         """
-        The phone number should contain only numbers and it's length should be equal to or greater than 10.
+        The phone number should contain only numbers and it's length should be equal to 10.
         """
         valid_phone = Customer(phone_no= 1234567890)
         invalid_phone = Customer(phone_no="abcdefg")
