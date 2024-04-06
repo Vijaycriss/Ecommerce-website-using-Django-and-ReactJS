@@ -2,3 +2,22 @@
 
 .env 
 .venv
+
+#database
+
+.db.sqlite3
+
+#flask stuff:
+
+instance/
+
+#jupyter notebooks
+
+*.ipynb
+*~
+
+# A directory for jupyter notebook checkpoints
+**.checkpoint
+
+# Jupyter notebook kernels that are launched by `nb_conda_kernels.py`
+kernel-*.json
