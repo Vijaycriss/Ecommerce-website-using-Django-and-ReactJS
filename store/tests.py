@@ -11,7 +11,7 @@ class  CustomerModelTest(TestCase):
         cls.client = Client()
         cls.first_name = Customer.objects.create(first_name='John')
         cls.last_name = Customer.objects.create(last_name = 'Doe')
-        cls.phone_no = Customer.objects.create(phone_number=1234567890)
+        cls.phone_no = Customer.objects.create(phone_number= 1234567890)
         cls.email = Customer.objects.create(email= "johndoe@gmail.com")
         cls.password = Customer.objects.create(password = "myPassword")
         return super().setUpTestData()
@@ -26,7 +26,7 @@ class  CustomerModelTest(TestCase):
         """
         The phone number should contain only numbers and it's length should be equal to or greater than 10.
         """
-        valid_phone = Customer(phone_number="1234567890")
+        valid_phone = Customer(phone_number= 1234567890)
         invalid_phone = Customer(phone_number="abcdefg")
         too_short_phone = Customer(phone_number="123")
 
